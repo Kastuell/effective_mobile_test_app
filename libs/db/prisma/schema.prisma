@@ -1,0 +1,48 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  plu  String @unique
+  name String
+
+  stock         Stock[]
+  ActionHistory ActionHistory[]
+}
+
+model Stock {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  shopId          String
+  quantityOnShelf Int
+  quantityInOrder Int
+
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int     @map("product_id")
+}
+
+model ActionHistory {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  action String
+  shopId String
+
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int     @map("product_id")
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "start": {
+      "dependsOn": ["^start"],
+      "cache": true
+    }
+  },
+  "defaultBase": "master"
+}

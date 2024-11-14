@@ -1,0 +1,20 @@
+{
+  "name": "effective_mobile_test_app",
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "description": "",
+  "scripts": {
+    "format:write": "prettier --write  \"{apps,libs}/**/*.{ts,js,json}\" --ignore-path .gitignore",
+    "format:check": "prettier --check  \"{apps,libs}/**/*.{ts,js,json}\" --ignore-path .gitignore"
+  },
+  "author": "kastuell",
+  "license": "ISC",
+  "devDependencies": {
+    "nx": "20.1.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5.6.3"
+  }
+}

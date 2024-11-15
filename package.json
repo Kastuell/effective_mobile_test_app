@@ -8,7 +8,9 @@
   "description": "",
   "scripts": {
     "format:write": "prettier --write  \"{apps,libs}/**/*.{ts,js,json}\" --ignore-path .gitignore",
-    "format:check": "prettier --check  \"{apps,libs}/**/*.{ts,js,json}\" --ignore-path .gitignore"
+    "format:check": "prettier --check  \"{apps,libs}/**/*.{ts,js,json}\" --ignore-path .gitignore",
+    "nx:start": "nx run-many --target=start",
+    "nx:db": "nx run-many --target=db"
   },
   "author": "kastuell",
   "license": "ISC",

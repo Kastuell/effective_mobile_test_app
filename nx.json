@@ -4,6 +4,9 @@
     "start": {
       "dependsOn": ["^start"],
       "cache": true
+    },
+    "db": {
+      "dependsOn": ["^db"]
     }
   },
   "defaultBase": "master"

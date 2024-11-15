@@ -1,2 +1,1 @@
-export { HistoryController } from './history-controller';
-
+export { HistoryController } from './history-controller'
